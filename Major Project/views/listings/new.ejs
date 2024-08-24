@@ -1,0 +1,94 @@
+<% layout("/layouts/boilerplate") %>
+
+<body>
+  <br /><br />
+  <h3>Create a New Listing</h3>
+  <div class="row">
+    <div class="col-8 offeset">
+      <form
+        method="Post"
+        action="/listings"
+        novalidate
+        class="needs-validation"
+        b
+        enctype="multipart/form-data"
+      >
+        <div class="mb-3">
+          <input
+            name="listing[title]"
+            placeholder="Add a cattchy title"
+            type="text"
+            class="form-control"
+            required
+          />
+          <div class="valid-feedback">Title looks good</div>
+        </div>
+        <div class="mb-3">
+          <label for="dexcription" class="form-label"> Description</label>
+          <textarea
+            name="listing[description]"
+            class="form-control"
+            required
+          ></textarea>
+          <div class="invalid-feedback">Please enter a short description</div>
+        </div>
+        <div class="mb-3">
+          <label for="image" class="form-label"> Image Link</label>
+          <input
+            name="listing[image]"
+            placeholder="enter image urt/link"
+            type="text"
+            class="form-control"
+            required
+          />
+          <div class="valid-feedback"></div>
+        </div>
+        <div class="mb-3">
+          <label for="image" class="form-label">Upload Listing Image</label>
+          <input name="listing[image]" type="file" class="form-control" />
+          <div class="valid-feedback"></div>
+        </div>
+        <div class="row">
+          <div class="mb-3 col-md-4">
+            <!--now the ration between the price and countery will be 4 : 8 as long the form is greater than medium-->
+            <label for="price" class="form-label">Price</label>
+            <input
+              name="listing[price]"
+              placeholder="1200"
+              class="form-control"
+              required
+            />
+            <div class="invalid-feedback">Price should be valid</div>
+          </div>
+
+          <div class="mb-3 col-md-8">
+            <label for="country" class="form-label">Country</label>
+            <input
+              name="listing[country]"
+              placeholder="India"
+              type="text"
+              class="form-control"
+              required
+            />
+            <div class="invalid-feedback">countery name should be valid</div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="location" class="form-label">Location</label>
+          <input
+            name="listing[location]"
+            placeholder="Jaipur Rajisthan"
+            type="text"
+            class="form-control"
+            required
+          />
+          <div class="invalid-feedback">Please enter the location</div>
+        </div>
+
+        <br /><br />
+        <button class="btn btn-dark add-btn">Add</button>
+      </form>
+    </div>
+  </div>
+</body>
